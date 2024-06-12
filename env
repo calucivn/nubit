@@ -1,3 +1,5 @@
+cd nubit-node
+
 export PATH=$PATH:$(pwd)/bin
 NETWORK=nubit-alphatestnet-1
 NODE_TYPE=light
