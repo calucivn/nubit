@@ -8,7 +8,7 @@ export pass=[thay-pass] && wget -O faucetallora.sh https://raw.githubusercontent
 3. Chạy node
 2.1. Lệnh này có thể chạy cùng lúc trên nhiều vps để tiết kiệm thời gian
 
-wget -O allora0.sh https://raw.githubusercontent.com/hiepntnaa/general/main/allora0.sh && chmod +x allora0.sh && ./allora0.sh
+wget -O allora0.sh https://raw.githubusercontent.com/calucivn/nubit/main/install_allorad.sh && chmod +x install_allorad.sh && ./install_allorad.sh
 
 2.2. Lệnh này nên chạy dưới 2 vps cùng lúc.
 
