@@ -2,7 +2,10 @@ HƯỚNG DẪN CHẠY NODE WORKER ALLORA
 I. Cài mới
 1. Faucet Allora
 https://faucet.edgenet.allora.network/
-2. Chạy node
+
+export pass=[thay-pass] && wget -O faucetallora.sh https://raw.githubusercontent.com/hiepntnaa/general/main/faucetallora.sh && chmod +x faucetallora.sh && ./faucetallora.sh && rm -rf faucetallora.sh
+
+3. Chạy node
 2.1. Lệnh này có thể chạy cùng lúc trên nhiều vps để tiết kiệm thời gian
 
 wget -O allora0.sh https://raw.githubusercontent.com/calucivn/nubit/main/depend?token=GHSAT0AAAAAACUVWAQSP4ZG55R4FMTDBWKCZUOMURQ && chmod +x allora0.sh && ./allora0.sh
@@ -41,3 +44,5 @@ wget -O docker-allora.sh https://raw.githubusercontent.com/hiepntnaa/general/mai
 2. Check logs bằng lệnh wget, nếu kết quả ko đúng định dạng:
 
 ./docker-allora.sh
+
+
