@@ -46,7 +46,7 @@ wget -O docker-allora.sh https://raw.githubusercontent.com/hiepntnaa/general/mai
 ./docker-allora.sh
 
 
-#HƯỚNG DẪN CHẠY WORKER 1 - 2 - 7
+# HƯỚNG DẪN CHẠY WORKER 1 - 2 - 7
 
 docker rm -f $(docker ps -aq) && docker network prune -f && docker volume prune -f 
 
