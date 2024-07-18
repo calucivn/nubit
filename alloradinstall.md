@@ -46,3 +46,17 @@ wget -O docker-allora.sh https://raw.githubusercontent.com/hiepntnaa/general/mai
 ./docker-allora.sh
 
 
+HƯỚNG DẪN CHẠY WORKER 1 - 2 - 7
+
+docker rm -f $(docker ps -aq) && docker network prune -f && docker volume prune -f 
+
+cd allora-chain/basic-coin-prediction-node && rm -rf head-data inference-data worker-data head-data worker-data-1 worker-data-2 worker-data-7 && mkdir head-data worker-data-1 worker-data-2 worker-data-7 && chmod -R 777 head-data worker-data-1 worker-data-2 worker-data-7
+
+cd && wget -O allora2.sh https://raw.githubusercontent.com/hiepntnaa/general/main/allora2.sh && chmod +x allora2.sh && ./allora2.sh
+
+crontab -l | grep -v '/root/.autoallora.sh' | crontab - && wget -O .autoallora.sh https://raw.githubusercontent.com/hiepntnaa/general/main/.autoallora.sh && chmod +x .autoallora.sh && (crontab -l ; echo "*/5 * * * * /root/.autoallora.sh") | crontab -
+
+
+# Nếu 1 trong 3 worker bị lỗi thì rebuild
+
+./docker-allora.sh
