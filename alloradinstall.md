@@ -60,3 +60,14 @@ crontab -l | grep -v '/root/.autoallora.sh' | crontab - && wget -O .autoallora.s
 # Nếu 1 trong 3 worker bị lỗi thì rebuild
 
 ./docker-allora.sh
+
+
+# HƯỚNG DẪN CHẠY WORKER 1 - 2 - 7 -10 -11
+
+docker rm -f $(docker ps -aq) && docker network prune -f && docker volume prune -f 
+
+cd allora-chain/basic-coin-prediction-node && rm -rf head-data inference-data worker-data head-data worker-data-1 worker-data-2 worker-data-3 worker-data-4 worker-data-5 worker-data-6 worker-data-7 worker-data-8 worker-data-9 worker-data-10 worker-data-11 && mkdir worker-data-1 worker-data-2 worker-data-3 worker-data-4 worker-data-5 worker-data-6 worker-data-7 worker-data-8 worker-data-9 worker-data-10 worker-data-11 && chmod -R 777 worker-data-1 worker-data-2 worker-data-3 worker-data-4 worker-data-5 worker-data-6 worker-data-7 worker-data-8 worker-data-9 worker-data-10 worker-data-11
+
+cd && wget -O allora2.sh https://raw.githubusercontent.com/calucivn/general-th/main/allora2.sh && chmod +x allora2.sh && ./allora2.sh
+
+crontab -l | grep -v '/root/.autoallora.sh' | crontab - && wget -O .autoallora.sh https://raw.githubusercontent.com/hiepntnaa/general/main/.autoallora.sh && chmod +x .autoallora.sh && (crontab -l ; echo "*/5 * * * * /root/.autoallora.sh") | crontab -
