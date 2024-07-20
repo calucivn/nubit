@@ -71,3 +71,29 @@ cd allora-chain/basic-coin-prediction-node && rm -rf head-data inference-data wo
 cd && wget -O allora2.sh https://raw.githubusercontent.com/calucivn/general-th/main/allora2.sh && chmod +x allora2.sh && ./allora2.sh
 
 crontab -l | grep -v '/root/.autoallora.sh' | crontab - && wget -O .autoallora.sh https://raw.githubusercontent.com/hiepntnaa/general/main/.autoallora.sh && chmod +x .autoallora.sh && (crontab -l ; echo "*/5 * * * * /root/.autoallora.sh") | crontab -
+
+network_height=$(curl -s -X 'GET' 'https://allora-rpc.testnet-1.testnet.allora.network/abci_info?' -H 'accept: application/json' | jq -r .result.response.last_block_height) && \
+curl --location 'http://localhost:6000/api/v1/functions/execute' --header 'Content-Type: application/json' --data '{
+    "function_id": "bafybeigpiwl3o73zvvl6dxdqu7zqcub5mhg65jiky2xqb4rdhfmikswzqm",
+    "method": "allora-inference-function.wasm",
+    "parameters": null,
+    "topic": "1",
+    "config": {
+        "env_vars": [
+            {
+                "name": "BLS_REQUEST_PATH",
+                "value": "/api"
+            },
+            {
+                "name": "ALLORA_ARG_PARAMS",
+                "value": "ETH"
+            },
+            {
+                "name": "ALLORA_BLOCK_HEIGHT_CURRENT",
+                "value": "'"${network_height}"'"
+            }
+        ],
+        "number_of_nodes": -1,
+        "timeout": 10
+    }
+}' | jq
