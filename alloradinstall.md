@@ -3,7 +3,7 @@ I. Cài mới
 1. Faucet Allora
 https://faucet.edgenet.allora.network/
 
-export pass=[thay-pass] && wget -O faucetallora.sh https://raw.githubusercontent.com/hiepntnaa/general/main/faucetallora.sh && chmod +x faucetallora.sh && ./faucetallora.sh && rm -rf faucetallora.sh
+export pass=[thay-pass] && wget -O faucetallora.sh https://raw.githubusercontent.com/calucivn/nubit/main/faucetallora.sh && chmod +x faucetallora.sh && ./faucetallora.sh && rm -rf faucetallora.sh
 
 3. Chạy node
 2.1. Lệnh này có thể chạy cùng lúc trên nhiều vps để tiết kiệm thời gian
